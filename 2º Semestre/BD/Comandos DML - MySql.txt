@@ -1,0 +1,10 @@
+Comandos DML - MySql
+
+CREATE DATABASE ALUNO; -- Cria a base de dados
+USE ALUNO; -- Entra na base de dados
+
+CREATE USER 'dba'@'localhost' identified by 'dba'; -- Criando o usuário
+DROP USER 'dba'@'localhost'; -- Deletado o usuário
+
+GRANT ALL PRIVILEGES ON ALUNO.* TO 'dba'@'localhost'; -- Dando privilégios pro usuário ao database
+FLUSH PRIVILEGES; -- Força o servidor interno a recarregar informações internas que ele mantém em memória
