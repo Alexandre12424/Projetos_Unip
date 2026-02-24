@@ -1,0 +1,13 @@
+Aula 2 - Orientação a objetos
+
+1 - Método divisão e conquista, programação dinâmica e método guloso:
+A) Trata-se da definição do método de divisão e conquista.
+B) A programação dinâmica aplica-se principalmente a problemas de otimização combinatória. 
+C) O método guloso, nem sempre faz a melhor opção momentânea, ele escolhe o subconjunto, que 
+satisfaça determinada restrição. Essa função viável, é chamada de solução ótima, mas o algoritmo 
+nem sempre tende a uma opção ótima. Somente alguns problemas, que possuem a propriedade de escolha gulosa.
+Tem uma solução global gulosa. Alcançada a partir de um conjunto de soluções locais ótimas.
+D) Os dois métodos trabalham em subproblemas que se repetem. 
+-> E) Embora o método de divisão e conquista resolva, recursivamente problemas cominando em subproblemas 
+independentes, a programação dinâmica trata de subproblemas que não são necessariamente diferentes. 
+Portanto, eles não apresentam a mesma eficiência.
