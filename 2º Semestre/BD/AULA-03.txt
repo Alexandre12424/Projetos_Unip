@@ -1,0 +1,104 @@
+AULA 3 BD
+
+C:\Users\Aluno>cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: unip
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 12.1.2-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test               |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> CREATE DATABASE escola;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE escola;
+Database changed
+mysql> CREATE TABLE alunos(id INT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100) NOT NULL, serie INT NOT NULL, data_nascimento DATE NOT NULL, email VARCHAR(150) NOT NULL, telefone VARCHAR(15) NOT NULL);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT alunos(nome, serie, data_nascimento, email, telefone) VALUE('Ramon', 2, '2005-02-05', 'ramon123@email.com', '19999998765');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM alunos;
++----+-------+-------+-----------------+--------------------+-------------+
+| id | nome  | serie | data_nascimento | email              | telefone    |
++----+-------+-------+-----------------+--------------------+-------------+
+|  1 | Ramon |     2 | 2005-02-05      | ramon123@email.com | 19999998765 |
++----+-------+-------+-----------------+--------------------+-------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT alunos(nome, serie, data_nascimento, email, telefone) VALUE('Jean', 2, '2002-06-24', 'jean123@email.com', '19989798722');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM alunos;
++----+-------+-------+-----------------+--------------------+-------------+
+| id | nome  | serie | data_nascimento | email              | telefone    |
++----+-------+-------+-----------------+--------------------+-------------+
+|  1 | Ramon |     2 | 2005-02-05      | ramon123@email.com | 19999998765 |
+|  2 | Jean  |     2 | 2002-06-24      | jean123@email.com  | 19989798722 |
++----+-------+-------+-----------------+--------------------+-------------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT serie FROM alunos;
++-------+
+| serie |
++-------+
+|     2 |
+|     2 |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT serie, nome FROM alunos;
++-------+-------+
+| serie | nome  |
++-------+-------+
+|     2 | Ramon |
+|     2 | Jean  |
++-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT id, data_nascimento FROM alunos;
++----+-----------------+
+| id | data_nascimento |
++----+-----------------+
+|  1 | 2005-02-05      |
+|  2 | 2002-06-24      |
++----+-----------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT count(*) FROM alunos;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade FROM alunos;
++-------+
+| idade |
++-------+
+|    21 |
+|    23 |
++-------+
+2 rows in set (0.00 sec)
