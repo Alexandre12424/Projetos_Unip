@@ -102,3 +102,35 @@ mysql> SELECT TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade FROM alun
 |    23 |
 +-------+
 2 rows in set (0.00 sec)
+
+mysql> SELECT nome FROM alunos ORDER BY nome ASC;
++-------+
+| nome  |
++-------+
+| Jean  |
+| Ramon |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT nome FROM alunos ORDER BY nome DESC;
++-------+
+| nome  |
++-------+
+| Ramon |
+| Jean  |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE alunos SET data_nascimento='2004-04-16' WHERE id=2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM alunos;
++----+-------+-------+-----------------+--------------------+-------------+
+| id | nome  | serie | data_nascimento | email              | telefone    |
++----+-------+-------+-----------------+--------------------+-------------+
+|  1 | Ramon |     2 | 2005-02-05      | ramon123@email.com | 19999998765 |
+|  2 | Jean  |     2 | 2004-04-16      | jean123@email.com  | 19989798722 |
++----+-------+-------+-----------------+--------------------+-------------+
+2 rows in set (0.00 sec)
+
